@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Task;
+
+use Illuminate\Support\Facades\DB;
+
 class TaskController extends Controller
 {
     /**
@@ -13,7 +17,15 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        // $tasks = Task::all();
+
+        $tasks = DB::table('tasks')
+        ->select('id','content')
+        ->get();
+
+        // dd($tasks);
+        return view('task.index',compact('tasks'));
+
     }
 
     /**
@@ -35,6 +47,15 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         //
+        $task = new Task;
+
+        $task->content = $request->input('content');
+
+        $task->save();
+
+        return redirect('task/index');
+        
+        // dd($content);
     }
 
     /**
@@ -46,6 +67,10 @@ class TaskController extends Controller
     public function show($id)
     {
         //
+        $task = Task::find($id);
+
+        return view('task.show',compact('task'));
+
     }
 
     /**
@@ -80,5 +105,9 @@ class TaskController extends Controller
     public function destroy($id)
     {
         //
+        $task = Task::find($id);
+        $task->delete();
+
+        return redirect('task/index');
     }
 }
