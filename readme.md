@@ -8,7 +8,7 @@ task app2
 2021.4.2 タスク投稿・一覧表示・詳細画面推移・タスク削除機能を搭載
 
 # 本番環境
-URL:https://github.com/wakabamark0701/task_app2  
+URL:http://task-app2.herokuapp.com/task/index 
 テストメールアドレス：なし（ログイン機能実装予定)  
 テストパスワード：なし（ログイン機能実装予定)  
 
