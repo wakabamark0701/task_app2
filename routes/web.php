@@ -15,16 +15,12 @@
 
 Route::get('/','TaskController@index');
 
-Route::group(['prefix'=>'task'],function(){
+Route::group(['prefix'=>'task','middleware'=>'auth'],function(){
     Route::get('index','TaskController@index')->name('task.index');
     Route::post('store','TaskController@store')->name('task.store');
     Route::post('destroy/{id}','TaskController@destroy')->name('task.destroy');
     Route::get('show/{id}','TaskController@show')->name('task.show');
 
-
-
-
-
-
-
 });
+
+
