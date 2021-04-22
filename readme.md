@@ -9,8 +9,9 @@ task app2
 
 # 本番環境
 URL:http://task-app2.herokuapp.com/task/index 
-テストメールアドレス：なし（ログイン機能実装予定)  
-テストパスワード：なし（ログイン機能実装予定)  
+Name:test  
+テストメールアドレス：test@test  
+テストパスワード：testtest  
 
 # どんな課題や不便なことを解決するためにこのアプリを作ったのか。
 laravel＋PHPの学習用のアウトプットとして作成致しました。
