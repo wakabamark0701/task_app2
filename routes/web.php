@@ -12,8 +12,9 @@
 */
 
 
-
-Route::get('/','TaskController@index');
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/','TaskController@index');
+});    
 
 Route::group(['prefix'=>'task','middleware'=>'auth'],function(){
     Route::get('index','TaskController@index')->name('task.index');
