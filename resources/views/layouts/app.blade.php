@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Task List</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -15,13 +16,31 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lato';
+            font-size: 100px;
+            
+        }
+        .fa-btn {
+            margin-right: 6px;
+        }
+
+        html{
+            font-size: 15px;
+
+        }
+    </style>
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Task List
@@ -72,7 +91,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py4">
             @yield('content')
         </main>
     </div>
